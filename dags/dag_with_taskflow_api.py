@@ -16,9 +16,12 @@ default_args = {
     schedule_interval="@daily",
 )
 def taskflow_api_dag():
-    @task
+    @task(multiple_outputs=True)
     def getname():
-        return "Grypton"
+        return {
+            "first_name": "Grypton",
+            "last_name": "Noname"
+        }
 
     @task
     def getage():
@@ -26,7 +29,7 @@ def taskflow_api_dag():
     
     @task
     def greet(name, age):
-        print(f"Hello {name}, you are {age} years old")
+        print(f"Hello {name['first_name']} {name['last_name']}, you are {age} years old")
 
     name = getname()
     age = getage()

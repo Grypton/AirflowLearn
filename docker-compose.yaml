@@ -99,7 +99,7 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
-    restart: always
+    tty: true
 
   # redis:
   #   # Redis is limited to 7.2-bookworm due to licencing change
@@ -126,7 +126,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    tty: true
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -141,7 +141,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    tty: true
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -179,7 +179,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    tty: true
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:

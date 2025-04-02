@@ -21,5 +21,5 @@ Airflow Catchup :
 1. Mention ```catchup=True``` while creating dag object, with start date as the date from when you want to do the catchup
 
 Airflow Backfill : 
-1. exec into the docker container(~airflow scheduler~) and then run this command to do the backfill from a specific time period
+1. exec into the docker container(*airflow scheduler*) and then run this command to do the backfill from a specific time period
 2. command: ```airflow dags backfill -s 2025-04-01 -e 2025-04-10 dag_id```  

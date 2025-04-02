@@ -12,3 +12,5 @@ Commands:
 3. Run the command ```docker-compose up airflow-init```: This sets up database 
 4. Run the command ```docker-compose up -d``` to run airflow in detached mode
 5. Run ```docker ps``` to see container and related information
+6. To remove airflow with volume: ```docker-compose down -v```
+7. Remove airflow default examples by turning the values of ```AIRFLOW__CORE__LOAD_EXAMPLES``` to ```'false'```

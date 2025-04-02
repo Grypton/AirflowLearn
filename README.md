@@ -14,3 +14,12 @@ Commands:
 5. Run ```docker ps``` to see container and related information
 6. To remove airflow with volume: ```docker-compose down -v```
 7. Remove airflow default examples by turning the values of ```AIRFLOW__CORE__LOAD_EXAMPLES``` to ```'false'```
+
+
+
+Airflow Catchup : 
+1. Mention ```catchup=True``` while creating dag object, with start date as the date from when you want to do the catchup
+
+Airflow Backfill : 
+1. exec into the docker container(~airflow scheduler~) and then run this command to do the backfill from a specific time period
+2. command: ```airflow dags backfill -s 2025-04-01 -e 2025-04-10 dag_id```  
